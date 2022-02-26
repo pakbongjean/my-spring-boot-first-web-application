@@ -1,8 +1,11 @@
 <html>
 <head>
-<title>First Web Application</title>
+<title>Login Page</title>
 </head>
 <body>
-My First jsp!! Welcome ${name}
+<form method="post">
+	Name: <input name="name" type="text" /><input type="submit">
+</form>
+
 </body>
 </html>
