@@ -3,6 +3,6 @@
 <title>First Web Application</title>
 </head>
 <body>
-My First jsp!!
+My First jsp!! Welcome ${name}
 </body>
 </html>
