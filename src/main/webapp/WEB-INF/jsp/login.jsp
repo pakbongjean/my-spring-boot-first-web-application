@@ -7,7 +7,7 @@
 <font color="red">${errorMessage}</font>
 <form method="post">
 	Name: <input name="name" type="text" />
-	Name: <input name="password" type="password" />
+	Password: <input name="password" type="password" />
 	<input type="submit">
 </form>
 
