@@ -5,12 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.in28minutes.springboot.web.service.LoginService;
 
 @Controller
+@SessionAttributes("name")
 public class LoginController {
 	
 	
@@ -18,12 +19,12 @@ public class LoginController {
 	private LoginService service;
 	
 	@GetMapping("/login")
-	public String loginMessage(){
+	public String showLoginPage(){
 		return "login";
 	}
 	
 	@PostMapping("/login")
-	public String handleLogin(ModelMap model,@RequestParam String name
+	public String showWelcomePage(ModelMap model,@RequestParam String name
 			,@RequestParam String password) {
 
 		if(!service.validateUser(name, password)) {
@@ -32,6 +33,7 @@ public class LoginController {
 		}
 		
 		model.put("name", name);
+		model.put("password", password);
 		return "welcome";
 	}
 	
