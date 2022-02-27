@@ -3,8 +3,12 @@
 <title>Login Page</title>
 </head>
 <body>
+
+<font color="red">${errorMessage}</font>
 <form method="post">
-	Name: <input name="name" type="text" /><input type="submit">
+	Name: <input name="name" type="text" />
+	Name: <input name="password" type="password" />
+	<input type="submit">
 </form>
 
 </body>
