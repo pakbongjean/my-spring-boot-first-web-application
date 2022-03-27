@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <html>
 <head>
 <link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css"
@@ -17,16 +18,20 @@
 					<th>Target Date</th>
 					<th>Is it Done?</th>
 					<th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${todos}" var="todo">
 					<tr>
 						<td>${todo.desc}</td>
-						<td>${todo.targetDate}</td>
+						<td><fmt:formatDate value="${todo.targetDate}"
+								pattern="dd/MM/yyyy" /></td>
 						<td>${todo.done}</td>
+						<td><a type="button" class="btn btn-success"
+							href="/update-todo?id=${todo.id}">Update</a></td>
 						<td><a type="button" class="btn btn-warning"
-							href="/delete-todo?id=${todo.id}">Del</a></td>
+							href="/delete-todo?id=${todo.id}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
