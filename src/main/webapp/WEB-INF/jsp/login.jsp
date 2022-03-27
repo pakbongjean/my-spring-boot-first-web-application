@@ -1,15 +1,12 @@
-<html>
-<head>
-<title>Login Page</title>
-</head>
-<body>
+<%@ include file="common/header.jspf"%>
+<%@ include file="common/navigation.jspf"%>
 
-<font color="red">${errorMessage}</font>
-<form method="post">
-	Name: <input name="name" type="text" />
-	Password: <input name="password" type="password" />
-	<input type="submit">
-</form>
+<div class="container">
+	<font color="red">${errorMessage}</font>
+	<form method="post">
+		Name: <input name="name" type="text" /> Password: <input
+			name="password" type="password" /> <input type="submit">
+	</form>
+</div>
 
-</body>
-</html>
+<%@ include file="common/footer.jspf"%>
