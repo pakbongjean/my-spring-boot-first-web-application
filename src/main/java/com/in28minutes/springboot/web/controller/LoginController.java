@@ -14,26 +14,12 @@ import com.in28minutes.springboot.web.service.LoginService;
 @SessionAttributes("name")
 public class LoginController {
 	
-	
 	@Autowired
 	private LoginService service;
 	
-	@GetMapping("/login")
-	public String showLoginPage(){
-		return "login";
-	}
-	
-	@PostMapping("/login")
-	public String showWelcomePage(ModelMap model,@RequestParam String name
-			,@RequestParam String password) {
-
-		if(!service.validateUser(name, password)) {
-			model.put("errorMessage", "Invalid Credentials!!");
-			return "login";
-		}
-		
-		model.put("name", name);
-		model.put("password", password);
+	@GetMapping("/")
+	public String showLoginPage(ModelMap model){
+		model.put("name", "in28Minutes");
 		return "welcome";
 	}
 	
