@@ -67,7 +67,9 @@ public class TodoController {
 			return "todo";
 		}
 
-		service.addTodo(getLoggedInUserName(model), todo.getDesc(), todo.getTargetDate(), false);
+		todo.setUser(getLoggedInUserName(model));
+		service.saveTodo(todo);
+		//service.addTodo(getLoggedInUserName(model), todo.getDesc(), todo.getTargetDate(), false);
 		return "redirect:/list-todos";
 	}
 
@@ -92,7 +94,8 @@ public class TodoController {
 		}
 
 		todo.setUser(getLoggedInUserName(model));
-		service.updateTodo(todo);
+		service.saveTodo(todo);
+		//service.updateTodo(todo);
 
 		return "redirect:/list-todos";
 	}
